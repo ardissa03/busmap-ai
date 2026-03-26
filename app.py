@@ -73,8 +73,6 @@ def match_station(name: str, stations: List[Dict]) -> Optional[Dict]:
     return None
 
 
-
-
 def station_mentioned_in_text(text: str, stations: List[Dict]) -> Optional[Dict]:
     q = norm(text)
     for station in stations:
@@ -83,6 +81,7 @@ def station_mentioned_in_text(text: str, stations: List[Dict]) -> Optional[Dict]
         if any(a and a in q for a in alias_norms):
             return station
     return None
+
 
 def route_by_name(name: str, routes: List[Dict]) -> Optional[Dict]:
     q = norm(name)
@@ -156,7 +155,7 @@ def generate_chat_reply(message: str, lat: Optional[float], lng: Optional[float]
 
     if any(term in q for term in ['pershendetje', 'hello', 'hi', 'tung']):
         base['reply'] = 'Përshëndetje! Mund të të ndihmoj me stacionin më të afërt, linjat, oraret, stacionet e një linje dhe sugjerimin nga A në B.'
-        base['suggestions'] = ['Cili është stacioni më i afërt?', 'Kur kalon A1?', 'Si të shkoj nga Qendra në Zogaj?']
+        base['suggestions'] = ['Cili është stacioni më i afërt?', 'Kur kalon L1?', 'Si të shkoj nga Qendra Shkodër në Zogaj?']
         return base
 
     if any(term in q for term in ['me i afert', 'nearest', 'closest', 'near me', 'prane meje']):
@@ -182,7 +181,7 @@ def generate_chat_reply(message: str, lat: Optional[float], lng: Optional[float]
                 base['suggestions'] = ['Cilat linja kalojnë aty?', 'Më trego në hartë']
                 return base
 
-    if any(term in q for term in ['orari', 'kur kalon', 'schedule', 'nisja']) :
+    if any(term in q for term in ['orari', 'kur kalon', 'schedule', 'nisja']):
         for route in routes:
             if norm(route['name']) in q or norm(route['id']) in q:
                 base['reply'] = f"{route['id']} • {route['name']} funksionon {route['schedule']}, me frekuencë {route['frequency']}. Nisja e parë: {route['first_departure']}, e fundit: {route['last_departure']}."
@@ -197,7 +196,7 @@ def generate_chat_reply(message: str, lat: Optional[float], lng: Optional[float]
                 base['focus_station_id'] = station['id']
                 base['suggestions'] = ['Cilat linja kalojnë aty?', 'Sa larg është ky stacion?']
                 return base
-        base['reply'] = 'Shkruaj emrin e linjës ose stacionit, p.sh. “Kur kalon A1?” ose “Orari te Terminali Lindor”.'
+        base['reply'] = 'Shkruaj emrin e linjës ose stacionit, p.sh. “Kur kalon L1?” ose “Orari te Qendra Shkodër”.'
         return base
 
     if any(term in q for term in ['cilat linja', 'linjat', 'which lines']):
@@ -225,7 +224,7 @@ def generate_chat_reply(message: str, lat: Optional[float], lng: Optional[float]
             base['reply'] = f"Rruga e sugjeruar është {route['id']} • {route['name']}. Orari: {route['schedule']}. Stacionet kryesore: {', '.join(route['stops'])}."
             base['suggestions'] = ['Më jep stacionet e kësaj linje', 'Kur nis autobusi i parë?']
             return base
-        base['reply'] = 'Nuk gjeta linjë direkte në dataset-in aktual. Provo me emrat e stacioneve ose qyteteve kryesore.'
+        base['reply'] = 'Nuk gjeta linjë direkte në dataset-in aktual. Provo me emrat e stacioneve ose zonave kryesore.'
         base['suggestions'] = ['Tregomë linjat aktive', 'Më gjej stacionin më të afërt']
         return base
 
@@ -244,12 +243,12 @@ def generate_chat_reply(message: str, lat: Optional[float], lng: Optional[float]
         return base
 
     if any(term in q for term in ['ndihme', 'help', 'cfare mund', 'cfa mund']):
-        base['reply'] = 'Mund të pyesësh: “Cili është stacioni më i afërt?”, “Kur kalon A1?”, “Cilat linja kalojnë te Qendra Shkodër?”, “Cilat stacione kalon A2?” ose “Si të shkoj nga Qendra në Zogaj?”.'
-        base['suggestions'] = ['Cili është stacioni më i afërt?', 'Kur kalon A1?', 'Si të shkoj nga Qendra në Zogaj?']
+        base['reply'] = 'Mund të pyesësh: “Cili është stacioni më i afërt?”, “Kur kalon L1?”, “Cilat linja kalojnë te Qendra Shkodër?”, “Cilat stacione kalon L2?” ose “Si të shkoj nga Qendra Shkodër në Zogaj?”.'
+        base['suggestions'] = ['Cili është stacioni më i afërt?', 'Kur kalon L1?', 'Si të shkoj nga Qendra Shkodër në Zogaj?']
         return base
 
     base['reply'] = 'Nuk gjeta përgjigje të saktë për këtë pyetje. Provo me emrin e një stacioni, linje ose kërko “stacioni më i afërt”.'
-    base['suggestions'] = ['Më gjej stacionin më të afërt', 'Tregomë linjat aktive', 'Si të shkoj nga Qendra në Zogaj?']
+    base['suggestions'] = ['Më gjej stacionin më të afërt', 'Tregomë linjat aktive', 'Si të shkoj nga Qendra Shkodër në Zogaj?']
     return base
 
 
