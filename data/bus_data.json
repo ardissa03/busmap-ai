@@ -1,31 +1,19 @@
 {
-  "app_name": "BusMap AI Pro",
+  "app_name": "SKTS BusMap AI",
   "city_center": {
-    "lat": 41.3275,
-    "lng": 19.8187
+    "lat": 42.0603,
+    "lng": 19.5170
   },
   "hero_stats": [
-    {
-      "label": "Stacione aktive",
-      "value": "14"
-    },
-    {
-      "label": "Linja demo",
-      "value": "9"
-    },
-    {
-      "label": "Qytete të mbuluara",
-      "value": "5"
-    },
-    {
-      "label": "Chatbot mode",
-      "value": "AI Assistant"
-    }
+    { "label": "Stacione aktive", "value": "5" },
+    { "label": "Linja urbane", "value": "2" },
+    { "label": "Qytete të mbuluara", "value": "1" },
+    { "label": "Chatbot mode", "value": "SKTS Assistant" }
   ],
   "quick_actions": [
     "Gjej stacionin më të afërt",
-    "Kërko sipas qytetit",
-    "Planifiko udhëtimin",
+    "Shiko linjat e Shkodrës",
+    "Kontrollo orarin",
     "Pyet chatbotin"
   ],
   "stations": [
@@ -33,64 +21,41 @@
       "id": 1,
       "name": "Qendra Shkodër",
       "city": "Shkodër",
-      "area": "Qendra",
-      "lat": 42.0683,
-      "lng": 19.5126,
-      "aliases": [
-        "qendra",
-        "pedonalja"
-      ],
-      "routes": [
-        "A1",
-        "A2",
-        "A3"
-      ]
+      "area": "Center",
+      "lat": 42.06773,
+      "lng": 19.51269,
+      "aliases": ["qendra", "center", "qender shkoder"],
+      "routes": ["L1", "L2"]
     },
     {
       "id": 2,
-      "name": "Universiteti Luigj Gurakuqi",
-      "city": "Shkodër",
-      "area": "Parrucë",
-      "lat": 42.0671,
-      "lng": 19.5158,
-      "aliases": [
-        "universiteti",
-        "parruce"
-      ],
-      "routes": [
-        "A1",
-        "A2"
-      ]
-    },
-    {
-      "id": 3,
       "name": "Bahçallëk",
       "city": "Shkodër",
       "area": "Bahçallëk",
-      "lat": 42.0619,
-      "lng": 19.5004,
-      "aliases": [
-        "bahcallek"
-      ],
-      "routes": [
-        "A1"
-      ]
+      "lat": 42.03917,
+      "lng": 19.49556,
+      "aliases": ["bahcallek"],
+      "routes": ["L1"]
+    },
+    {
+      "id": 3,
+      "name": "Fermentim",
+      "city": "Shkodër",
+      "area": "Fermentim",
+      "lat": 42.0740,
+      "lng": 19.5180,
+      "aliases": ["fermentim"],
+      "routes": ["L1"]
     },
     {
       "id": 4,
-      "name": "Zogu i Zi Shkodër",
+      "name": "Shirokë",
       "city": "Shkodër",
-      "area": "Sheshi Demokracia",
-      "lat": 42.0736,
-      "lng": 19.5068,
-      "aliases": [
-        "zogu i zi",
-        "demokracia"
-      ],
-      "routes": [
-        "A2",
-        "A4"
-      ]
+      "area": "Shirokë",
+      "lat": 42.0578,
+      "lng": 19.4561,
+      "aliases": ["shiroke"],
+      "routes": ["L2"]
     },
     {
       "id": 5,
@@ -99,270 +64,28 @@
       "area": "Zogaj",
       "lat": 42.0881,
       "lng": 19.4112,
-      "aliases": [
-        "zogaj"
-      ],
-      "routes": [
-        "A2"
-      ]
-    },
-    {
-      "id": 6,
-      "name": "Spitali Rajonal Shkodër",
-      "city": "Shkodër",
-      "area": "Spital",
-      "lat": 42.0567,
-      "lng": 19.5201,
-      "aliases": [
-        "spitali",
-        "spital"
-      ],
-      "routes": [
-        "A3",
-        "A4"
-      ]
-    },
-    {
-      "id": 7,
-      "name": "Terminali Lindor",
-      "city": "Tiranë",
-      "area": "Tirana East Gate",
-      "lat": 41.2838,
-      "lng": 19.856,
-      "aliases": [
-        "terminali lindor",
-        "east terminal",
-        "teg"
-      ],
-      "routes": [
-        "B1",
-        "B2"
-      ]
-    },
-    {
-      "id": 8,
-      "name": "Qendra Tiranë",
-      "city": "Tiranë",
-      "area": "Skënderbej",
-      "lat": 41.3275,
-      "lng": 19.8187,
-      "aliases": [
-        "qendra tirane",
-        "skenderbej",
-        "qender tirane"
-      ],
-      "routes": [
-        "B1",
-        "B3"
-      ]
-    },
-    {
-      "id": 9,
-      "name": "Laprake",
-      "city": "Tiranë",
-      "area": "Laprakë",
-      "lat": 41.3384,
-      "lng": 19.7932,
-      "aliases": [
-        "laprake"
-      ],
-      "routes": [
-        "B3"
-      ]
-    },
-    {
-      "id": 10,
-      "name": "Stacioni i Trenit Durrës",
-      "city": "Durrës",
-      "area": "Qendra",
-      "lat": 41.3183,
-      "lng": 19.4544,
-      "aliases": [
-        "stacioni i trenit",
-        "durres qender"
-      ],
-      "routes": [
-        "C1"
-      ]
-    },
-    {
-      "id": 11,
-      "name": "Ura e Dajlanit",
-      "city": "Durrës",
-      "area": "Porta hyrëse",
-      "lat": 41.3163,
-      "lng": 19.4699,
-      "aliases": [
-        "dajlan",
-        "ura e dajlanit"
-      ],
-      "routes": [
-        "C1"
-      ]
-    },
-    {
-      "id": 12,
-      "name": "Terminali Vlorë",
-      "city": "Vlorë",
-      "area": "Qendra",
-      "lat": 40.4649,
-      "lng": 19.4823,
-      "aliases": [
-        "vlore bus station",
-        "terminali vlore"
-      ],
-      "routes": [
-        "D1"
-      ]
-    },
-    {
-      "id": 13,
-      "name": "International Bus Station Tirana",
-      "city": "Tiranë",
-      "area": "Kamzë",
-      "lat": 41.33294,
-      "lng": 19.80126,
-      "aliases": [
-        "international bus station",
-        "kamze terminal"
-      ],
-      "routes": [
-        "B2",
-        "C1",
-        "D1"
-      ]
-    },
-    {
-      "id": 14,
-      "name": "Terminali Fier",
-      "city": "Fier",
-      "area": "Qendra",
-      "lat": 40.7231,
-      "lng": 19.556,
-      "aliases": [
-        "fier terminal",
-        "qendra fier"
-      ],
-      "routes": [
-        "D1"
-      ]
+      "aliases": ["zogaj"],
+      "routes": ["L2"]
     }
   ],
   "routes": [
     {
-      "id": "A1",
-      "name": "Qendër Shkodër - Bahçallëk",
+      "id": "L1",
+      "name": "Fermentim - Center - Bahçallëk",
       "schedule": "06:30 - 22:00",
-      "frequency": "Çdo 20 minuta",
+      "frequency": "06:30-14:30 çdo 15 min; 14:30-22:00 çdo 30 min",
       "first_departure": "06:30",
       "last_departure": "22:00",
-      "stops": [
-        "Qendra Shkodër",
-        "Universiteti Luigj Gurakuqi",
-        "Bahçallëk"
-      ]
+      "stops": ["Fermentim", "Qendra Shkodër", "Bahçallëk"]
     },
     {
-      "id": "A2",
-      "name": "Qendër Shkodër - Zogaj",
-      "schedule": "07:00 - 21:00",
-      "frequency": "Çdo 30 minuta",
-      "first_departure": "07:00",
-      "last_departure": "21:00",
-      "stops": [
-        "Qendra Shkodër",
-        "Zogu i Zi Shkodër",
-        "Zogaj"
-      ]
-    },
-    {
-      "id": "A3",
-      "name": "Qendër Shkodër - Spitali",
-      "schedule": "06:45 - 21:30",
-      "frequency": "Çdo 25 minuta",
-      "first_departure": "06:45",
-      "last_departure": "21:30",
-      "stops": [
-        "Qendra Shkodër",
-        "Universiteti Luigj Gurakuqi",
-        "Spitali Rajonal Shkodër"
-      ]
-    },
-    {
-      "id": "A4",
-      "name": "Qendra Shkodër - Zogu i Zi - Spitali",
-      "schedule": "07:15 - 20:45",
-      "frequency": "Çdo 35 minuta",
-      "first_departure": "07:15",
-      "last_departure": "20:45",
-      "stops": [
-        "Qendra Shkodër",
-        "Zogu i Zi Shkodër",
-        "Spitali Rajonal Shkodër"
-      ]
-    },
-    {
-      "id": "B1",
-      "name": "Qendra Tiranë - Terminali Lindor",
-      "schedule": "06:00 - 23:00",
-      "frequency": "Çdo 15 minuta",
-      "first_departure": "06:00",
-      "last_departure": "23:00",
-      "stops": [
-        "Qendra Tiranë",
-        "Terminali Lindor"
-      ]
-    },
-    {
-      "id": "B2",
-      "name": "International Bus Station - Terminali Lindor",
-      "schedule": "06:30 - 22:30",
-      "frequency": "Çdo 25 minuta",
-      "first_departure": "06:30",
-      "last_departure": "22:30",
-      "stops": [
-        "International Bus Station Tirana",
-        "Qendra Tiranë",
-        "Terminali Lindor"
-      ]
-    },
-    {
-      "id": "B3",
-      "name": "Qendra Tiranë - Laprakë",
-      "schedule": "06:10 - 22:20",
-      "frequency": "Çdo 20 minuta",
-      "first_departure": "06:10",
-      "last_departure": "22:20",
-      "stops": [
-        "Qendra Tiranë",
-        "Laprake"
-      ]
-    },
-    {
-      "id": "C1",
-      "name": "Tiranë - Durrës",
-      "schedule": "05:45 - 22:15",
-      "frequency": "Çdo 30 minuta",
-      "first_departure": "05:45",
-      "last_departure": "22:15",
-      "stops": [
-        "International Bus Station Tirana",
-        "Ura e Dajlanit",
-        "Stacioni i Trenit Durrës"
-      ]
-    },
-    {
-      "id": "D1",
-      "name": "Tiranë - Fier - Vlorë",
-      "schedule": "06:00 - 21:00",
-      "frequency": "Çdo 60 minuta",
-      "first_departure": "06:00",
-      "last_departure": "21:00",
-      "stops": [
-        "International Bus Station Tirana",
-        "Terminali Fier",
-        "Terminali Vlorë"
-      ]
+      "id": "L2",
+      "name": "Center - Shirokë - Zogaj",
+      "schedule": "Sipas orarit ditor",
+      "frequency": "Disa nisje në ditë",
+      "first_departure": "07:30",
+      "last_departure": "14:30",
+      "stops": ["Qendra Shkodër", "Shirokë", "Zogaj"]
     }
   ]
 }
